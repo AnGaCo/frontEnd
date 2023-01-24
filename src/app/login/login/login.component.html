@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h3 class="bg-secondary">LOGIN</h3><br>
+    <form (ngSubmit)="onLogin()" novalidated #f="ngForm">
+        <div class="row mb-3">
+            <label for="nombreUsuario" class="col-sm-2 col-form-label">Username:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario">
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="password" class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-10">
+                <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password">
+            </div>
+        </div>
+
+        <div class="row mt-5 row-btn">
+            <div class="col-sm-5">
+                <button class="btn btn-success" [disabled]="!f.valid">Ingresar</button>
+            </div>
+            <div class="col-sm-5">
+                <button class="btn btn-primary btn-visitor" (click)="loginVisitor()">Ingresar como visitante</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,37 @@
+
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Estudios  
+      <!--<button class="btn btn-success" *ngIf="permis">Añadir</button>-->
+      <i class="fa-regular fa-square-plus fa-1x" routerLink="/agr-estudio"*ngIf="permis"></i>
+    </h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5" >
+      <div class="col d-flex align-items-start" *ngFor="let estudio of estus; index as i">
+        <!--<button class="btn btn-warning" *ngIf="permis"><i class="fa-solid fa-pen-to-square"></i></button>-->
+        <a href="home#open-modal-est" *ngIf="permis" (click)="confirmar(estudio.idEstudio,i)"><i class="fa-regular fa-trash-can"></i></a>
+
+        <!--Modal casero-->
+        <!--<a class="boton form-control" href="home#open-modal">Ver Foto</a>-->
+        <div id="open-modal-est" class="modal-window-est">
+          <div>
+            <a href="home#estudios" title="Close" class="modal-close-est">Close</a>
+            <h1>Eliminar estudio</h1>
+            <div>
+              <h4>Esta seguro que quiere eliminar: </h4>
+              <p>{{estuElim.titulo}}</p>
+              <button class="btn btn-success" (click)="eliminar(estuElim.idEstudio,indice)">Confirmar</button>
+              <a href="home#estudios" class="boton">Cancelar</a>
+            </div>
+          </div>
+        </div>
+        <!--Fin del modal casero-->
+
+        <i class="fa-solid fa-pen-to-square" routerLink="/edit-estudio/{{estudio.idEstudio}}" *ngIf="permis"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4">{{estudio.titulo}}</h3>
+          <p>{{estudio.institucion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

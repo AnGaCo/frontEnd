@@ -1,0 +1,48 @@
+
+<div class="container mt-3">
+    <form class="row g-3" (ngSubmit)="onCreate()" novalidated #f="ngForm">
+        <div class="col-md-6">
+          <label for="institucion" class="form-label">Nombre de la Institucion</label>
+          <input type="text" class="form-control" id="institucion" name="institucion" [(ngModel)]="institucion" required>
+        </div>
+        <div class="col-md-6">
+          <label for="titulo" class="form-label">Titulo</label>
+          <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo" required>
+        </div>
+        <div class="col-md-6">
+            <label for="entrada" class="form-label">Fecha de Entrada</label>
+            <input type="date" class="form-control" id="entrada" name="entrada" [(ngModel)]="entrada" required>
+          </div>
+          <div class="col-md-6">
+            <label for="salida" class="form-label">Fecha de Salida</label>
+            <input type="date" class="form-control" id="salida" name="salida" [(ngModel)]="salida" required>
+          </div>
+        <div class="col-md-9">
+          <label for="logo" class="form-label">Logo de la Institucion</label>
+          <input type="text" class="form-control" id="logo" name="logo" [(ngModel)]="logo" required>
+        </div>
+        <div class="col-md-3">
+          <label for="vista-previa" class="form-label" style="color: transparent;">-</label>
+          <!--<input type="text" class="form-control" id="vista-previa">-->
+          <!--<button class="btn btn-primary form-control">Vista Previa</button>-->
+          
+          <!--Modal casero-->
+          <a class="boton form-control" href="agr-estudio#open-modal">Ver Foto</a>
+          <div id="open-modal" class="modal-window">
+            <div>
+              <a href="agr-estudio" title="Close" class="modal-close">Close</a>
+              <h1>Vista Previa</h1>
+              <div><img src="{{logo}}" alt="logo-institucion" width="300" style="margin-left: 5%;"></div>
+            </div>
+          </div>
+          <!--Fin del modal casero-->
+
+        </div>
+        <div class="col-6 mt-5">
+          <button type="submit" class="btn btn-success form-control" [disabled]="!f.valid">Guardar</button>
+        </div>
+        <div class="col-6 mt-5">
+            <button type="submit" class="btn btn-secondary form-control" (click)="volver()">Cancelar</button>
+          </div>
+      </form>
+</div>

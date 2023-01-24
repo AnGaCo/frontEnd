@@ -1,0 +1,28 @@
+<div class="about-me">
+
+  <div class="card mb-3">
+    <!--<button class="btn btn-warning" *ngIf="permis">Editar perfil</button>-->
+    <div class="row g-0" *ngIf="per">
+      <div class="card-image col-md-2">
+        <img *ngIf="per.foto!=''" src="{{per.foto}}" class="img-fluid rounded-start" alt="foto de perfil" width="180">
+        <img *ngIf="per.foto==''" src="https://i.gyazo.com/5b8bdd13b697c6b01cecd43ad8778582.png" class="img-fluid rounded-start" alt="foto de perfil" width="180">
+      </div>
+      <div class="card-description col-md-10">
+        <div class="card-body">
+          <h5 class="card-title">{{per.nombre}} {{per.apellido}} 
+            <i class="fa-solid fa-pen-to-square" style="float: right;" *ngIf="permis" routerLink="/edit-profile/{{per.idPerfil}}"></i>
+          </h5>
+          <h6 class="card-subtitle pb-3">{{per.profesion}}</h6>
+          <p class="card-text"> {{per.resumen}}</p>
+          <p class="card-text">
+            <a href="{{per.linkedin}}"><i class="fa-brands fa-linkedin fa-2x"></i></a>
+            <a href="{{per.github}}"><i class="fa-brands fa-github fa-2x"></i></a>
+            <a href="{{per.facebook}}"><i class="fa-brands fa-facebook fa-2x"></i></a>
+            <a href="{{per.twitter}}"><i class="fa-brands fa-twitter fa-2x"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,76 @@
+
+<div class="container mt-3">
+    <form class="row g-3" (ngSubmit)="onUpdate()" novalidated #f="ngForm">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="perfil.nombre" required>
+        </div>
+        <div class="col-md-6">
+          <label for="apellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="perfil.apellido" required>
+        </div>
+        <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="perfil.email" required>
+          </div>
+          <div class="col-md-6">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" [(ngModel)]="perfil.telefono" required>
+          </div>
+          <div class="col-6">
+            <label for="domicilio" class="form-label">Domicilio</label>
+            <input type="text" class="form-control" id="domicilio" name="domicilio" [(ngModel)]="perfil.domicilio" required>
+          </div>
+        <div class="col-6">
+          <label for="profesion" class="form-label">Profesion</label>
+          <input type="text" class="form-control" id="profesion" name="profesion" [(ngModel)]="perfil.profesion" required>
+        </div>
+        <div class="col-12">
+          <label for="resumen" class="form-label">Resumen</label>
+          <input type="text" class="form-control" id="resumen" name="resumen" [(ngModel)]="perfil.resumen" required>
+        </div>
+        <div class="col-md-3">
+            <label for="linkedin" class="form-label">Linkedin</label>
+            <input type="text" class="form-control" id="linkedin" name="linkedin" [(ngModel)]="perfil.linkedin" required>
+          </div>
+          <div class="col-md-3">
+            <label for="github" class="form-label">Github</label>
+          <input type="text" class="form-control" id="github" name="github" [(ngModel)]="perfil.github" required>
+          </div>
+          <div class="col-md-3">
+            <label for="twitter" class="form-label">Twitter</label>
+            <input type="text" class="form-control" id="twitter" name="twitter" [(ngModel)]="perfil.twitter" required>
+          </div>
+          <div class="col-md-3">
+            <label for="facebook" class="form-label">Facebook</label>
+            <input type="text" class="form-control" id="facebook" name="facebook" [(ngModel)]="perfil.facebook" required>
+          </div>
+        <div class="col-md-9">
+          <label for="foto" class="form-label">Foto</label>
+          <input type="text" class="form-control" id="foto" name="foto" [(ngModel)]="perfil.foto" required>
+        </div>
+        <div class="col-md-3">
+          <label for="vista-previa" class="form-label" style="color: transparent;">-</label>
+          <!--<input type="text" class="form-control" id="vista-previa">-->
+          <!--<button class="btn btn-primary form-control">Vista Previa</button>-->
+          
+          <!--Modal casero-->
+          <a class="boton form-control" href="edit-profile/{{perfil.idPerfil}}#open-modal">Ver Foto</a>
+          <div id="open-modal" class="modal-window">
+            <div>
+              <a href="edit-profile/{{perfil.idPerfil}}" title="Close" class="modal-close">Close</a>
+              <h1>Vista Previa</h1>
+              <div><img src="{{perfil.foto}}" alt="foto-perfil" width="300" style="margin-left: 5%;"></div>
+            </div>
+          </div>
+          <!--Fin del modal casero-->
+
+        </div>
+        <div class="col-6 mt-5">
+          <button type="submit" class="btn btn-success form-control" [disabled]="!f.valid">Guardar</button>
+        </div>
+        <div class="col-6 mt-5">
+            <button type="submit" class="btn btn-secondary form-control" (click)="volver()">Cancelar</button>
+          </div>
+      </form>
+</div>

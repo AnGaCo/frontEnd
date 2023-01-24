@@ -1,0 +1,145 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(65, 132, 177);
+}
+
+.row {
+    margin-top: 40px;
+}
+
+p {
+    color: rgb(202, 201, 201);
+}
+
+i, .fw-normal {
+    display: flex;
+    justify-content: center;
+}
+
+.fa-regular {
+    display: inline-block;
+}
+
+h2 {
+    color: white;
+}
+
+.fa-regular, .fa-pen-to-square {
+    color:white;
+}
+.fa-regular, .fa-pen-to-square:hover {
+    cursor:pointer;
+}
+
+.fw-normal {
+    color: white;
+}
+
+.fa-square-plus:hover {
+    color: rgb(18, 218, 18);
+}
+
+.fa-pen-to-square {
+    margin-top: 4px;
+    margin-right: 5px;
+    margin-left: 38%;
+}
+.fa-pen-to-square:hover {
+    color: rgb(243, 243, 15);
+}
+
+.fa-trash-can:hover {
+    color: rgb(241, 11, 11);
+}
+
+.opc-icono {
+    float: left;
+    /*margin-left: 30%;*/
+}
+
+.modal-window-tec {
+    position: fixed;
+    background-color: rgba(160, 155, 155, 0.671);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.modal-window-tec:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-window-tec > div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background-color: rgb(65, 132, 177);
+}
+
+header {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+    color: white;
+}
+
+.modal-close-tec {
+    color: #aaa;
+    line-height: 50px;
+    font-size: 80%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+}
+
+.modal-close-tec:hover {
+    color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    margin-top: 6px;
+    margin-left: 50px;
+}
+
+.modal-window-tec > div {
+    border-radius: 1rem;
+}
+
+.modal-window-tec div:not(:last-of-type) {
+    margin-bottom: 15px;
+}
+
+.boton {
+    background-color: rgb(252, 38, 38);
+    
+    padding: 8px 10px;
+    border-radius: 0.4rem;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: rgb(255, 90, 90);
+}

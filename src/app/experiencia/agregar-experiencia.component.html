@@ -1,0 +1,52 @@
+
+<div class="container mt-3">
+    <form class="row g-3" (ngSubmit)="onCreate()" novalidated #f="ngForm">
+        <div class="col-md-6">
+          <label for="puesto" class="form-label">Puesto</label>
+          <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="puesto" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lugar" class="form-label">Lugar</label>
+          <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)]="lugar" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inicio" class="form-label">Inicio</label>
+            <input type="date" class="form-control" id="inicio" name="inicio" [(ngModel)]="inicio" required>
+          </div>
+          <div class="col-md-6">
+            <label for="fin" class="form-label">Fin</label>
+            <input type="date" class="form-control" id="fin" name="fin" [(ngModel)]="fin" required>
+          </div>
+          <div class="col-6">
+            <label for="desc" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="desc" name="desc" [(ngModel)]="desc" required>
+          </div>
+        <div class="col-md-9">
+          <label for="logo" class="form-label">Logo de la Empresa</label>
+          <input type="text" class="form-control" id="logo" name="logo" [(ngModel)]="logo" required>
+        </div>
+        <div class="col-md-3">
+          <label for="vista-previa" class="form-label" style="color: transparent;">-</label>
+          <!--<input type="text" class="form-control" id="vista-previa">-->
+          <!--<button class="btn btn-primary form-control">Vista Previa</button>-->
+          
+          <!--Modal casero-->
+          <a class="boton form-control" href="agr-experiencia#open-modal">Ver Foto</a>
+          <div id="open-modal" class="modal-window">
+            <div>
+              <a href="agr-experiencia" title="Close" class="modal-close">Close</a>
+              <h1>Vista Previa</h1>
+              <div><img src="{{logo}}" alt="logo-empresa" width="300" style="margin-left: 5%;"></div>
+            </div>
+          </div>
+          <!--Fin del modal casero-->
+
+        </div>
+        <div class="col-6 mt-5">
+          <button type="submit" class="btn btn-success form-control" [disabled]="!f.valid">Guardar</button>
+        </div>
+        <div class="col-6 mt-5">
+            <button type="submit" class="btn btn-secondary form-control" (click)="volver()">Cancelar</button>
+          </div>
+      </form>
+</div>

@@ -1,0 +1,10 @@
+.container {
+    background-color: rgb(65, 132, 177);
+    padding: 0 50px 15px 50px;
+    max-width: 100vw;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}

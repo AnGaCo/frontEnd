@@ -1,0 +1,39 @@
+
+<div class="list-group list-group-checkable d-grid gap-2 border-0 w-auto">
+  <h2 class="pb-2 border-bottom">Proyectos
+    <!--<button class="btn btn-success" *ngIf="permis">Añadir</button>-->
+    <i class="fa-regular fa-square-plus fa-1x" routerLink="/agr-proyecto" *ngIf="permis"></i>
+  </h2>
+
+  <div class="elemento" *ngFor="let proyecto of pros; index as i">
+    <input class="list-group-item-check pe-none" type="radio" name="listGroupCheckableRadios"
+      id="listGroupCheckableRadios1" value="" checked="">
+    <label class="list-group-item rounded-3 py-3" for="listGroupCheckableRadios1">
+      {{proyecto.nombre}} 
+      <!--<button class="btn btn-warning" *ngIf="permis" style="float: right;"><i class="fa-solid fa-pen-to-square"></i></button>-->
+      <!--<i class="fa-regular fa-trash-can" style="float: right;" *ngIf="permis"></i>-->
+
+      <a href="home#open-modal-pro" *ngIf="permis" (click)="confirmar(proyecto.idProyecto,i)"><i class="fa-regular fa-trash-can"></i></a>
+
+        <!--Modal casero-->
+        <!--<a class="boton form-control" href="home#open-modal">Ver Foto</a>-->
+        <div id="open-modal-pro" class="modal-window-pro">
+          <div>
+            <a href="home#proyectos" title="Close" class="modal-close-pro">Close</a>
+            <h1>Eliminar proyecto</h1>
+            <div>
+              <h4>Esta seguro que quiere eliminar: </h4>
+              <p>{{proElim.nombre}}</p>
+              <button class="btn btn-success" (click)="eliminar(proElim.idProyecto,indice)">Confirmar</button>
+              <a href="home#proyectos" class="boton">Cancelar</a>
+            </div>
+          </div>
+        </div>
+        <!--Fin del modal casero-->
+
+      <i class="fa-solid fa-pen-to-square" style="float: right; margin-right: 10px; margin-top: 4px;" routerLink="/edit-proyecto/{{proyecto.idProyecto}}" *ngIf="permis"></i>
+      <span class="d-block small opacity-50">{{proyecto.descripcion}}</span>
+    </label>
+  </div>
+
+</div>

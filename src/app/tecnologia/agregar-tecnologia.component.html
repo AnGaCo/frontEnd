@@ -1,0 +1,16 @@
+
+<div class="container mt-3">
+    <form class="row g-3" (ngSubmit)="onCreate()" novalidated #f="ngForm">
+        <div class="col-md-12">
+          <label for="nombre" class="form-label">Nombre de la Tecnologia</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+        </div>
+        
+        <div class="col-6 mt-5">
+          <button type="submit" class="btn btn-success form-control" [disabled]="!f.valid">Guardar</button>
+        </div>
+        <div class="col-6 mt-5">
+            <button type="submit" class="btn btn-secondary form-control" (click)="volver()">Cancelar</button>
+          </div>
+      </form>
+</div>

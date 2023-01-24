@@ -1,0 +1,52 @@
+
+<div class="container mt-3">
+    <form class="row g-3" (ngSubmit)="onUpdate()" novalidated #f="ngForm">
+        <div class="col-md-6">
+          <label for="puesto" class="form-label">Puesto</label>
+          <input type="text" class="form-control" id="puesto" name="puesto" [(ngModel)]="experiencia.puesto" required>
+        </div>
+        <div class="col-md-6">
+          <label for="lugar" class="form-label">Lugar</label>
+          <input type="text" class="form-control" id="lugar" name="lugar" [(ngModel)]="experiencia.lugar" required>
+        </div>
+        <div class="col-md-6">
+            <label for="inicio" class="form-label">Inicio</label>
+            <input type="text" class="form-control" id="inicio" name="inicio" [(ngModel)]="experiencia.inicio" required>
+          </div>
+          <div class="col-md-6">
+            <label for="fin" class="form-label">Fin</label>
+            <input type="text" class="form-control" id="fin" name="fin" [(ngModel)]="experiencia.fin" required>
+          </div>
+          <div class="col-12">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="experiencia.descripcion" required>
+          </div>
+        <div class="col-md-9">
+          <label for="logo_empresa" class="form-label">Logo de la Empresa</label>
+          <input type="text" class="form-control" id="logo_empresa" name="logo_empresa" [(ngModel)]="experiencia.logo_empresa" required>
+        </div>
+        <div class="col-md-3">
+          <label for="vista-previa" class="form-label" style="color: transparent;">-</label>
+          <!--<input type="text" class="form-control" id="vista-previa">-->
+          <!--<button class="btn btn-primary form-control">Vista Previa</button>-->
+          
+          <!--Modal casero-->
+          <a class="boton form-control" href="edit-experiencia/{{experiencia.idExp}}#open-modal">Ver Foto</a>
+          <div id="open-modal" class="modal-window">
+            <div>
+              <a href="edit-experiencia/{{experiencia.idExp}}" title="Close" class="modal-close">Close</a>
+              <h1>Vista Previa</h1>
+              <div><img src="{{experiencia.idExp}}" alt="logo-empresa" width="300" style="margin-left: 5%;"></div>
+            </div>
+          </div>
+          <!--Fin del modal casero-->
+
+        </div>
+        <div class="col-6 mt-5">
+          <button type="submit" class="btn btn-success form-control" [disabled]="!f.valid">Guardar</button>
+        </div>
+        <div class="col-6 mt-5">
+            <button type="submit" class="btn btn-secondary form-control" (click)="volver()">Cancelar</button>
+          </div>
+      </form>
+</div>

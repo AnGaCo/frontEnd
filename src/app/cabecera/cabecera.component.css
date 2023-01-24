@@ -1,0 +1,13 @@
+
+.navbar {
+    background-color: rgb(65, 132, 177);
+}
+
+.nav-item {
+    margin-left: 15px;
+}
+
+.nav-item a {
+    font-weight: bold;
+    color: #fff;
+}

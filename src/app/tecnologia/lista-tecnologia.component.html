@@ -1,0 +1,44 @@
+<div class="container marketing">
+    <h2 class="pb-2 border-bottom">Tecnologias
+      <!--<button class="btn btn-success" *ngIf="permis">Añadir</button>-->
+      <i class="fa-regular fa-square-plus fa-1x" routerLink="/agr-tecnologia" *ngIf="permis"></i>
+    </h2>
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let tecnologia of tec; index as i">
+        <!--<i class="fa-regular fa-trash-can" style="float: left; margin-right: 8px;" *ngIf="permis"></i>
+        <i class="fa-solid fa-pen-to-square mb-3" style="float: left;" routerLink="/edit-tecnologia/{{tecnologia.idTec}}" *ngIf="permis"></i>
+        -->
+        <i class="fa-solid fa-star fa-5x"></i>
+
+        <h2 class="fw-normal">{{tecnologia.nombre}}</h2>
+        
+          
+          <a href="home#open-modal-tec" *ngIf="permis" (click)="confirmar(tecnologia.idTec,i)"><i class="fa-regular fa-trash-can"></i></a>
+
+        <!--Modal casero-->
+        <!--<a class="boton form-control" href="home#open-modal">Ver Foto</a>-->
+        <div id="open-modal-tec" class="modal-window-tec">
+          <div>
+            <a href="home#tecnologias" title="Close" class="modal-close-tec">Close</a>
+            <h1>Eliminar tecnologia</h1>
+            <div>
+              <h4>Esta seguro que quiere eliminar: </h4>
+              <p>{{tecElim.nombre}}</p>
+              <button class="btn btn-success" (click)="eliminar(tecElim.idTec,indice)">Confirmar</button>
+              <a href="home#tecnologias" class="boton">Cancelar</a>
+            </div>
+          </div>
+        </div>
+        <!--Fin del modal casero-->
+
+          <i class="fa-solid fa-pen-to-square mb-3 opc-icono" routerLink="/edit-tecnologia/{{tecnologia.idTec}}" *ngIf="permis"></i>
+        
+        <!--<p>Texto descripcion de la tecnologia mostrada.</p>-->
+        <!--<button class="btn btn-warning" *ngIf="permis" style="margin: 0 36%;"><i class="fa-solid fa-pen-to-square"></i></button>-->
+        <!--<button class="btn btn-warning" *ngIf="permis" style="width: 100px; margin: 0 36%;">o</button>-->
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+  </div>

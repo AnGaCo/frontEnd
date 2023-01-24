@@ -1,0 +1,38 @@
+.card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-text > a > i {
+    padding-right: 20px;
+}
+
+/*.principal {
+    display: inline-block;
+    width: 15%;
+    background-color: red;
+}*/
+
+/*.principal img {
+    border-radius: 50%;
+    margin: 20px;
+}*/
+
+.aside {
+    display: inline-block;
+    width: 85%;
+    /*background-color: blue;*/
+    padding-left: 30px;
+}
+
+.about-me {
+    background-color: rgb(65, 132, 177);
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.fa-pen-to-square:hover {
+    cursor: pointer;
+    color: rgb(65, 132, 177);
+}

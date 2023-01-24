@@ -1,0 +1,35 @@
+<div class="container px-4 py-5">
+    <h2 class="pb-2 border-bottom">Experiencias
+      <!--<button class="btn btn-success" *ngIf="permis">Añadir</button>-->
+      <i class="fa-regular fa-square-plus fa-1x" routerLink="/agr-experiencia" *ngIf="permis"></i>
+    </h2>
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+      <div class="col d-flex align-items-start" *ngFor="let experiencia of exps; index as i">
+        <!--<button class="btn btn-warning" *ngIf="permis">o</button>-->
+        <a href="home#open-modal-exp" *ngIf="permis" (click)="confirmar(experiencia.idExp,i)"><i class="fa-regular fa-trash-can"></i></a>
+
+        <!--Modal casero-->
+        <div id="open-modal-exp" class="modal-window-exp">
+          <div>
+            <a href="home#experiencias" title="Close" class="modal-close-exp">Close</a>
+            <h1>Eliminar experiencia</h1>
+            <div>
+              <h4>Esta seguro que quiere eliminar: </h4>
+              <p>{{expElim.puesto}}</p>
+              <button class="btn btn-success" (click)="eliminar(expElim.idExp,indice)">Confirmar</button>
+              <a href="home#experiencias" class="boton">Cancelar</a>
+            </div>
+          </div>
+        </div>
+        <!--Fin del modal casero-->
+
+        <i class="fa-solid fa-pen-to-square" routerLink="/edit-experiencia/{{experiencia.idExp}}" *ngIf="permis"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <div>
+          <h3 class="fw-bold mb-0 fs-4">{{experiencia.puesto}}</h3>
+          <p>{{experiencia.lugar}}</p>
+        </div>
+      </div>
+    </div>
+  </div>

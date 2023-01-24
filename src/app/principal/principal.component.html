@@ -1,0 +1,33 @@
+<app-cabecera></app-cabecera>
+
+<div class="p-md-5 text-bg-secondary">
+    <div class="col-md-6 px-0">
+        <h1 class="display-4 fst-italic">Argentina Programa Proyecto Integrador</h1>
+        <p class="lead my-3">Este proyecto fue desarrollado como proyecto integrador para Argentina Programa y sirve
+            como portfolio de presentacion del alumno.</p>
+        <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continuar leyendo...</a></p>
+    </div>
+</div>
+
+<!--<h3 style="text-align: center;">isAdmin= {{isAdmin}}</h3>-->
+
+<div id="about-me">
+<app-mi-perfil [per]="perfil" [permis]="isAdmin"></app-mi-perfil>
+</div>
+
+<div id="estudios">
+<app-lista-estudio [estus]="estudios" [permis]="isAdmin"></app-lista-estudio>
+</div>
+
+<div id="tecnologias">
+<app-lista-tecnologia [tec]="tecnologias" [permis]="isAdmin"></app-lista-tecnologia>
+</div>
+
+<div id="proyectos">
+<app-lista-proyecto [pros]="proyectos" [permis]="isAdmin"></app-lista-proyecto>
+</div>
+
+<div id="experiencias">
+<app-lista-experiencia [exps]="experiencias" [permis]="isAdmin"></app-lista-experiencia>
+</div>
+
