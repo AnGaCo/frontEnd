@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Estudio } from '../models/estudio';
+import { AlertService } from '../service/alert.service';
 import { EstudioService } from '../service/estudio.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class ListaEstudioComponent implements OnInit {
 
   constructor(
     private estudioService: EstudioService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,8 @@ export class ListaEstudioComponent implements OnInit {
         this.indice = index;
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -41,12 +44,13 @@ export class ListaEstudioComponent implements OnInit {
     //alert("Se elimino el estudio ID: " + id + ", INDEX: " + index);
     this.estudioService.borrar(id).subscribe(
       data => {
-        alert("El estudio ha sido eliminado!");
-        //this.estus.splice(index,1);
+        //alert("El estudio ha sido eliminado!");
+        this.alertService.showAlert("El estudio ha sido eliminado!",3000);
         window.location.reload();
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }

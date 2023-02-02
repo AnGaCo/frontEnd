@@ -4,6 +4,7 @@ import { Experiencia } from '../models/experiencia';
 import { Perfil } from '../models/perfil';
 import { Proyecto } from '../models/proyecto';
 import { Tecnologia } from '../models/tecnologia';
+import { AlertService } from '../service/alert.service';
 import { EstudioService } from '../service/estudio.service';
 import { ExperienciaService } from '../service/experiencia.service';
 import { PerfilService } from '../service/perfil.service';
@@ -34,7 +35,8 @@ export class PrincipalComponent implements OnInit {
     private expService: ExperienciaService,
     private tecService: TecnologiaService,
     private proService: ProyectoService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -113,5 +115,9 @@ export class PrincipalComponent implements OnInit {
         alert("Error: " + err.message);
       }
     );
+  }
+
+  doSomething() {
+    this.alertService.showAlert("Llamado desde PRINCIPAL",3000,0);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Estudio } from '../models/estudio';
+import { AlertService } from '../service/alert.service';
 import { EstudioService } from '../service/estudio.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class AgregarEstudioComponent implements OnInit {
 
   constructor(
     private estudioService: EstudioService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -29,11 +31,13 @@ export class AgregarEstudioComponent implements OnInit {
     const estudio = new Estudio(this.id,this.institucion,this.logo,this.titulo,this.entrada,this.salida);
     this.estudioService.crear(estudio).subscribe(
       data => {
-        alert("Nuevo estudio agregado!");
+        //alert("Nuevo estudio agregado!");
+        this.alertService.showAlert("Nuevo estudio agregado!",3000);
         this.router.navigate(['/home']);
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
         this.router.navigate(['/home']);
       }
     );

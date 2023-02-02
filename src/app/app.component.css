@@ -2,3 +2,10 @@
 .cuerpo {
     background-color: rgb(65, 132, 177);
 }
+
+.alerta {
+    position: fixed;
+    max-width: 500px;
+    top: 80px;
+    right: 15px;
+}

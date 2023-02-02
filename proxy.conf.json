@@ -1,0 +1,8 @@
+{
+    "/api/tecnologia/*": {
+        "target" : "https://backend-argprog.onrender.com",
+        "secure" : false,
+        "logLevel" : "debug",
+        "changeOrigin" : true
+    }
+}

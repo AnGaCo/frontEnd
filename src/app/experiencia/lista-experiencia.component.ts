@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from '../models/experiencia';
+import { AlertService } from '../service/alert.service';
 import { ExperienciaService } from '../service/experiencia.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class ListaExperienciaComponent implements OnInit {
 
   constructor(
     private expService: ExperienciaService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,8 @@ export class ListaExperienciaComponent implements OnInit {
         this.indice = index;
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -40,11 +43,13 @@ export class ListaExperienciaComponent implements OnInit {
   eliminar(id: number, index:number): void {
     this.expService.borrar(id).subscribe(
       data => {
-        alert("La experiencia ha sido eliminada!");
+        //alert("La experiencia ha sido eliminada!");
+        this.alertService.showAlert("La experiencia ha sido eliminada!",3000);
         window.location.reload();
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }

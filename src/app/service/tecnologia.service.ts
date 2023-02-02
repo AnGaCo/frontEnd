@@ -8,7 +8,9 @@ import { Tecnologia } from '../models/tecnologia';
 })
 export class TecnologiaService {
 
-  url = 'http://localhost:8080/api/tecnologia/';
+  //url = '/api/tecnologia/';
+  url = 'https://backend-argprog.onrender.com/api/tecnologia/';
+  //url = 'http://localhost:8080/api/tecnologia/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,4 +33,5 @@ export class TecnologiaService {
   public borrar(id: number): Observable<any> {
     return this.httpClient.delete<any>(this.url + `delete/${id}`);
   }
+
 }

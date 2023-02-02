@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Estudio } from '../models/estudio';
+import { AlertService } from '../service/alert.service';
 import { EstudioService } from '../service/estudio.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class EditarEstudioComponent implements OnInit {
   constructor(
     private estudioService: EstudioService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -34,11 +36,13 @@ export class EditarEstudioComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.estudioService.editar(id,this.estudio).subscribe(
       data => {
-        alert("Estudio actualizado!");
+        //alert("Estudio actualizado!");
+        this.alertService.showAlert("Perfil Actualizado!",3000);
         this.router.navigate(['/home']);
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
         this.router.navigate(['/home']);
       }
     );

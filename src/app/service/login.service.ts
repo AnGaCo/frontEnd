@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  url = 'http://localhost:8080/api/user/';
+  url = 'https://backend-argprog.onrender.com/api/user/';
+  //url = 'http://localhost:8080/api/user/';
 
   constructor(
     

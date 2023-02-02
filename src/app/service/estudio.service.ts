@@ -8,7 +8,8 @@ import { Estudio } from '../models/estudio';
 })
 export class EstudioService {
 
-  url = 'http://localhost:8080/api/estudio/';
+  url = 'https://backend-argprog.onrender.com/api/estudio/';
+  //url = 'http://localhost:8080/api/estudio/';
 
   constructor(private httpClient: HttpClient) { }
 

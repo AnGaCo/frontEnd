@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proyecto } from '../models/proyecto';
+import { AlertService } from '../service/alert.service';
 import { ProyectoService } from '../service/proyecto.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class ListaProyectoComponent implements OnInit {
 
   constructor(
     private proyectoService: ProyectoService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -32,7 +34,8 @@ export class ListaProyectoComponent implements OnInit {
         this.indice = index;
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -40,12 +43,15 @@ export class ListaProyectoComponent implements OnInit {
   eliminar(id: number, index: number): void {
     this.proyectoService.borrar(id).subscribe(
       data => {
-        alert("El proyecto ha sido eliminado!");
+        //alert("El proyecto ha sido eliminado!");
+        this.alertService.showAlert("El proyecto ha sido eliminado!",3000);
         window.location.reload();
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
+
 }

@@ -28,6 +28,7 @@ h3 {
 
 label {
     padding: 5px;
+    padding-right: 8px;
 }
 
 .btn {
@@ -42,6 +43,7 @@ label {
 
 input {
     padding: 5px;
+    padding-left: 10px;
 }
 
 .row-btn {

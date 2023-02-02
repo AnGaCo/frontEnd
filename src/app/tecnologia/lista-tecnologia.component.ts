@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tecnologia } from '../models/tecnologia';
+import { AlertService } from '../service/alert.service';
 import { TecnologiaService } from '../service/tecnologia.service';
 
 @Component({
   selector: 'app-lista-tecnologia',
   templateUrl: './lista-tecnologia.component.html',
-  styleUrls: ['./lista-tecnologia.component.css']
+  styleUrls: ['./lista-tecnologia.component.css'],
+  providers: [TecnologiaService],
 })
 export class ListaTecnologiaComponent implements OnInit {
 
@@ -18,7 +20,8 @@ export class ListaTecnologiaComponent implements OnInit {
 
   constructor(
     private tecnoService: TecnologiaService,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -30,6 +33,7 @@ export class ListaTecnologiaComponent implements OnInit {
       data => {
         this.tecElim = data;
         this.indice = index;
+        //this.eliminar(this.tecElim.idTec,this.indice);
       },
       err => {
         alert("Error " + err.message);
@@ -40,12 +44,15 @@ export class ListaTecnologiaComponent implements OnInit {
   eliminar(id: number, index: number): void {
     this.tecnoService.borrar(id).subscribe(
       data => {
-        alert("La tecnologia ha sido eliminada!");
+        //alert("La tecnologia ha sido eliminada!");
+        this.alertService.showAlert("La tecnologia ha sido eliminada!",3000);
         window.location.reload();
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
+
 }

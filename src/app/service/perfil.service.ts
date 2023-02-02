@@ -8,7 +8,8 @@ import { Perfil } from '../models/perfil';
 })
 export class PerfilService {
 
-  url = 'http://localhost:8080/api/perfil/';
+  url = 'https://backend-argprog.onrender.com/api/perfil/';
+  //url = 'http://localhost:8080/api/perfil/';
 
   constructor(private httpClient: HttpClient) { }
   //constructor(private httpClient: HttpClient, private cookies: CookieService) { }

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Tecnologia } from '../models/tecnologia';
+import { AlertService } from '../service/alert.service';
 import { TecnologiaService } from '../service/tecnologia.service';
 
 @Component({
   selector: 'app-editar-tecnologia',
   templateUrl: './editar-tecnologia.component.html',
-  styleUrls: ['./editar-tecnologia.component.css']
+  styleUrls: ['./editar-tecnologia.component.css'],
+  providers: [TecnologiaService],
 })
 export class EditarTecnologiaComponent implements OnInit {
 
@@ -15,7 +17,8 @@ export class EditarTecnologiaComponent implements OnInit {
   constructor(
     private tecnoService: TecnologiaService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -34,11 +37,13 @@ export class EditarTecnologiaComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params['id'];
     this.tecnoService.editar(id,this.tecnologia).subscribe(
       data => {
-        alert("Tecnologia actualizada!");
+        //alert("Tecnologia actualizada!");
+        this.alertService.showAlert("Tecnologia actualizado!",3000);
         this.router.navigate(['/home']);
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
