@@ -32,6 +32,7 @@
         <!--Fin del modal casero-->
 
       <i class="fa-solid fa-pen-to-square" style="float: right; margin-right: 10px; margin-top: 4px;" routerLink="/edit-proyecto/{{proyecto.idProyecto}}" *ngIf="permis"></i>
+      <a href="{{proyecto.enlace_proyecto}}" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right: 12px; margin-top: 5px;"></i></a>
       <span class="d-block small opacity-50">{{proyecto.descripcion}}</span>
     </label>
   </div>

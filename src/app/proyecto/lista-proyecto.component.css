@@ -58,10 +58,10 @@ input, optgroup, select, textarea {
     font-size: 15px;
 }
 
-.fa-trash-can, .fa-pen-to-square {
+.fa-trash-can, .fa-pen-to-square, .fa-arrow-up-right-from-square {
     color: #000;
 }
-.fa-regular, .fa-pen-to-square:hover {
+.fa-regular, .fa-pen-to-square, .fa-arrow-up-right-from-square:hover {
     cursor:pointer;
 }
 
@@ -79,6 +79,10 @@ h2 {
 
 .fa-trash-can:hover {
     color: rgb(241, 11, 11);
+}
+
+.fa-arrow-up-right-from-square:hover {
+    color: rgb(11, 157, 241);
 }
 
 p {
