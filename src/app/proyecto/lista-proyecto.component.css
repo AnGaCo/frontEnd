@@ -88,7 +88,7 @@ p {
 .elemento {
     margin-bottom: 15px;
 }
-.elemento:last-child() {
+.elemento:last-child {
     margin-bottom: 0;
 }
 

@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Tecnologia {\n  constructor(id, nombre) {\n    this.idTec = id;\n    this.nombre = nombre;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

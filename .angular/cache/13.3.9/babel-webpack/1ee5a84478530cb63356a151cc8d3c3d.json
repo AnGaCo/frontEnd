@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class Estudio {\n  constructor(id, nombre, logo, titulo, entrada, salida) {\n    this.idEstudio = id;\n    this.institucion = nombre;\n    this.logo = logo;\n    this.titulo = titulo;\n    this.entrada = entrada;\n    this.salida = salida;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}
