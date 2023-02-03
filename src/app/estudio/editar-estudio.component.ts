@@ -27,7 +27,8 @@ export class EditarEstudioComponent implements OnInit {
         this.estudio = data;
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }

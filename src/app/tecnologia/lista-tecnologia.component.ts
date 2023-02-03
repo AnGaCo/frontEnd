@@ -36,7 +36,8 @@ export class ListaTecnologiaComponent implements OnInit {
         //this.eliminar(this.tecElim.idTec,this.indice);
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }

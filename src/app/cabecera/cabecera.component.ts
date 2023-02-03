@@ -31,6 +31,7 @@ export class CabeceraComponent implements OnInit {
 
   onLogOut(): void {
     this.tokenService.logOut();
-    window.location.href = "http://localhost:4200/";
+    //window.location.href = "http://localhost:4200/";
+    window.location.href = "https://manuelorozco-portfolio.web.app/";
   }
 }

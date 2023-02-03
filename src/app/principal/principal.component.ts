@@ -59,7 +59,8 @@ export class PrincipalComponent implements OnInit {
           //alert("Perfil: " + this.perfil.nombre + " " + this.perfil.apellido);
         },
         err => {
-          alert("Error al cargar datos!");
+          //alert("Error al cargar datos!");
+          this.alertService.showAlert("ERROR: " + err.message,5000,0);
         }
       );
     }else{
@@ -79,7 +80,8 @@ export class PrincipalComponent implements OnInit {
         this.estudios = data;
       },
       err => {
-        alert("Error: " + err.message);
+        //alert("Error: " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -90,7 +92,8 @@ export class PrincipalComponent implements OnInit {
         this.experiencias = data;
       },
       err => {
-        alert("Error: " + err.message);
+        //alert("Error: " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -101,7 +104,8 @@ export class PrincipalComponent implements OnInit {
         this.tecnologias = data;
       },
       err => {
-        alert("Error: " + err.message);
+        //alert("Error: " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
@@ -112,7 +116,8 @@ export class PrincipalComponent implements OnInit {
         this.proyectos = data;
       },
       err => {
-        alert("Error: " + err.message);
+        //alert("Error: " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }

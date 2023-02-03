@@ -48,7 +48,8 @@ export class LoginComponent implements OnInit {
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        window.location.href = "http://localhost:4200/home/";
+        //window.location.href = "http://localhost:4200/home/";
+        window.location.href = "https://manuelorozco-portfolio.web.app/home/";
         //setTimeout( function(){ window.location.href = "http://localhost:4200/home/"; }, 5000 );
       },
       err => {

@@ -28,7 +28,8 @@ export class EditarTecnologiaComponent implements OnInit {
         this.tecnologia = data;
       },
       err => {
-        alert("Error " + err.message);
+        //alert("Error " + err.message);
+        this.alertService.showAlert("ERROR: " + err.message,5000,0);
       }
     );
   }
